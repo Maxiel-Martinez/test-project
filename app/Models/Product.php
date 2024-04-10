@@ -14,4 +14,20 @@ class Product extends Model
         'precio',
         'imagen',
     ];
+
+    // Relaciones
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

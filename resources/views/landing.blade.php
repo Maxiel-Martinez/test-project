@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Productos</title>
-    <!-- Incluir archivos CSS y JS necesarios -->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+</head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -23,6 +22,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('products.create') }}">Crear Producto</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('categories.index') }}">Ver Categorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('categories.create') }}">Crear Categoría</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tags.index') }}">Ver Etiquetas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tags.create') }}">Crear Etiqueta</a>
+                        </li>
+        
                     </ul>
                 </div>
             </div>
@@ -31,12 +43,12 @@
 
     <main class="container my-5">
         <h1 class="text-center mb-4">Bienvenido a nuestro Catálogo de Productos</h1>
-        <p class="lead text-center mb-5">Aquí puedes ver, agregar, editar y eliminar productos de forma sencilla.</p>
+        <p class="lead text-center mb-5">Aquí puedes ver, agregar, editar y eliminar productos, categorías, etiquetas y reseñas de forma sencilla.</p>
 
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                <img src="{{ asset('imagen/Untitled-4-400x250.jpg') }}" class="card-img-top" alt="Producto">
+                    <img src="{{ asset('imagen/Untitled-4-400x250.jpg') }}" class="card-img-top" alt="Producto">
                     <div class="card-body">
                         <h5 class="card-title">Producto Destacado - Maquillaje</h5>
                         <p class="card-text">Descripción del producto destacado.</p>
@@ -53,7 +65,6 @@
         </div>
     </footer>
 
-    <!-- Incluir archivos JavaScript necesarios -->
     <script src="{{ asset('js/preventBack.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

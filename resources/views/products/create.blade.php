@@ -13,7 +13,17 @@
 
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-
+        <div class="form-group">
+            <label for="categories">Categorías</label>
+            <select class="form-control @error('categories') is-invalid @enderror" id="categories" name="categories[]" multiple required>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->nombre }}</option>
+            @endforeach
+             </select>
+             @error('categories')
+                 <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre" name="nombre" value="{{ old('nombre') }}" required>
